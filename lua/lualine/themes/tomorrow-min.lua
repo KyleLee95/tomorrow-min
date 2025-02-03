@@ -1,31 +1,23 @@
--- local colors = require("lush_theme.color-pallete")
+local colors = require("tomorrow-min.colors")
 
--- local chalktone = {
--- 	normal = {
--- 		a = { fg = p.bg_main, bg = p.fg_main, gui = "bold" },
--- 		b = { fg = p.fg_main, bg = p.bg_statusline1 },
--- 		c = { fg = p.fg_main, bg = p.bg_statusline2 },
--- 	},
--- 	insert = {
--- 		a = { fg = p.bg_main, bg = p.string, gui = "bold" },
--- 		b = { fg = p.fg_main, bg = p.bg_statusline1 },
--- 	},
--- 	visual = {
--- 		a = { fg = p.bg_main, bg = p.keyword, gui = "bold" },
--- 		b = { fg = p.fg_main, bg = p.bg_statusline1 },
--- 	},
--- 	command = {
--- 		a = { fg = p.bg_main, bg = p.operator, gui = "bold" },
--- 		b = { fg = p.fg_main, bg = p.bg_statusline1 },
--- 	},
--- 	inactive = {
--- 		a = { fg = p.bg_main, bg = p.comments, gui = "bold" },
--- 		b = { fg = p.fg_main, bg = p.bg_statusline1 },
--- 	},
--- 	replace = {
--- 		a = { fg = p.bg_main, bg = p.func, gui = "bold" },
--- 		b = { fg = p.fg_main, bg = p.bg_statusline1 },
--- 	},
--- }
---
--- return chalktone
+local tomorrow_min = {
+	normal = {
+		a = { fg = colors.base.white, bg = colors.vscode.dark_blue, gui = "bold" },
+	},
+	insert = {
+		a = { fg = colors.base.white, bg = colors.bright.green, gui = "bold" },
+	},
+	visual = {
+		a = { fg = colors.base.white, bg = colors.bright.orange, gui = "bold" },
+	},
+	command = {
+		a = { fg = colors.base.white, bg = colors.bright.purple, gui = "bold" },
+	},
+	inactive = {
+		a = { fg = colors.base.white, bg = colors.base.comment, gui = "bold" },
+	},
+	replace = {
+		a = { fg = colors.base.white, bg = colors.bright.red, gui = "bold" },
+	},
+}
+return tomorrow_min
