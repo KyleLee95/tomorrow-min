@@ -157,8 +157,8 @@ local theme = lush(function(injected_functions)
 		SpellCap({ gui = "undercurl", sp = colors.base.yellow }), -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal({ gui = "undercurl", sp = colors.base.blue }), -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare({ gui = "undercurl", sp = colors.base.blue }), -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
-		StatusLine({ fg = colors.base.fg, bg = colors.ghostty.bg_blue }), -- Status line of current window
-		-- StatusLineNC({}), -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		StatusLine({ fg = colors.ghostty.bg_blue, bg = colors.ghostty.bg_blue }), -- Status line of current window
+		StatusLineNC({ bg = colors.ghostty.bg_blue }), -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		-- TabLine        { }, -- Tab pages line, not active tab page label
 		-- TabLineFill    { }, -- Tab pages line, where there are no labels
 		-- TabLineSel     { }, -- Tab pages line, active tab page label
