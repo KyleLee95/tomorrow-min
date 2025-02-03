@@ -1,47 +1,3 @@
---
--- Built with,
---
---        ,gggg,
---       d8" "8I                         ,dPYb,
---       88  ,dP                         IP'`Yb
---    8888888P"                          I8  8I
---       88                              I8  8'
---       88        gg      gg    ,g,     I8 dPgg,
---  ,aa,_88        I8      8I   ,8'8,    I8dP" "8I
--- dP" "88P        I8,    ,8I  ,8'  Yb   I8P    I8
--- Yb,_,d88b,,_   ,d8b,  ,d8b,,8'_   8) ,d8     I8,
---  "Y8P"  "Y888888P'"Y88P"`Y8P' "YY8P8P88P     `Y8
---
-
--- This is a starter colorscheme for use with Lush,
--- for usage guides, see :h lush or :LushRunTutorial
-
---
--- Note: Because this is a lua file, vim will append it to the runtime,
---       which means you can require(...) it in other lua code (this is useful),
---       but you should also take care not to conflict with other libraries.
---
---       (This is a lua quirk, as it has somewhat poor support for namespacing.)
---
---       Basically, name your file,
---
---       "super_theme/lua/lush_theme/super_theme_dark.lua",
---
---       not,
---
---       "super_theme/lua/dark.lua".
---
---       With that caveat out of the way...
---
-
--- Enable lush.ify on this file, run:
---
---  `:Lushify`
---
---  or
---
---  `:lua require('lush').ify()`
-
 local lush = require("lush")
 local hsl = lush.hsl
 
@@ -123,7 +79,7 @@ local theme = lush(function(injected_functions)
 		-- TabLine        { }, -- Tab pages line, not active tab page label
 		-- TabLineFill    { }, -- Tab pages line, where there are no labels
 		-- TabLineSel     { }, -- Tab pages line, active tab page label
-		Title({ fg = colors.base.blue }), -- Titles for output from ":set all", ":autocmd" etc.
+		-- Title({ fg = colors.base.blue }), -- Titles for output from ":set all", ":autocmd" etc.
 		-- Visual         { }, -- Visual mode selection
 		-- VisualNOS      { }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg({ fg = colors.base.yellow }), -- Warning messages
@@ -158,7 +114,7 @@ local theme = lush(function(injected_functions)
 		Repeat({ fg = colors.base.purple }), --   for, do, while, etc.
 		Label({ fg = colors.base.purple }), --   case, default, etc.
 		-- Operator       { }, --   "sizeof", "+", "*", etc.
-		Keyword({ fg = colors.base.purple }), --   any other keyword
+		Keyword({ fg = colors.base.blue }), --   any other keyword
 		Exception({ fg = colors.base.purple }), --   try, catch, throw
 
 		PreProc({ fg = colors.base.orange }), -- (*) Generic Preprocessor
