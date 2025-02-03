@@ -14,7 +14,7 @@ vim.g.colors_name = "tomorrow-min"
 --
 -- The performance impact of this call can be measured in the hundreds of
 -- *nanoseconds* and such could be considered "production safe".
-package.loaded["lush_theme.tomorrow-min"] = nil
+package.loaded["tomorrow-min.theme"] = nil
 
 -- include our theme file and pass it to lush to apply
-require("lush")(require("lush_theme.tomorrow-min"))
+require("lush")(require("tomorrow-min.theme"))

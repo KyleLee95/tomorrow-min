@@ -45,46 +45,7 @@
 local lush = require("lush")
 local hsl = lush.hsl
 
-local colors = {
-	vscode = {
-		dark_blue = "#569CD6", -- folder color
-		cornflower_blue = "#6796E6",
-	},
-	ghostty = {
-		bg_blue = "#2b303b",
-	},
-	base = {
-		fg = "#c5c8c6",
-		bg = "#1d1f21",
-		selection = "#373b41",
-		line = "#282a2e",
-		comment = "#969896",
-		red = "#cc6666",
-		orange = "#de935f",
-		yellow = "#f0c674",
-		green = "#b5bd68",
-		aqua = "#8abeb7",
-		blue = "#81a2be",
-		purple = "#b294bb",
-		window = "#4d5057",
-	},
-	bright = {
-		fg = "#eaeaea",
-		bg = "#000000",
-		selection = "#424242",
-		line = "#2a2a2a",
-		comment = "#969896",
-		red = "#d54e53",
-		orange = "#e78c45",
-		yellow = "#e7c547",
-		green = "#b9ca4a",
-		aqua = "#70c0b1",
-		blue = "#7aa6da",
-		purple = "#c397d8",
-		window = "#4d5057",
-	},
-}
-
+local colors = require("tomorrow-min.colors")
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
 ---@diagnostic disable: undefined-global
@@ -102,7 +63,7 @@ local theme = lush(function(injected_functions)
 		-- See :h highlight-groups
 		--
 		-- ColorColumn    { }, -- Columns set with 'colorcolumn'
-		-- Conceal        { }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
+		Conceal({ fg = colors.base.comment }), -- Placeholder characters substituted for concealed text (see 'conceallevel')
 		-- Cursor         { }, -- Character under the cursor
 		-- CurSearch      { }, -- Highlighting a search pattern under the cursor (see 'hlsearch')
 		-- lCursor        { }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
@@ -117,7 +78,7 @@ local theme = lush(function(injected_functions)
 		-- EndOfBuffer    { }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
 		-- TermCursor     { }, -- Cursor in a focused terminal
 		-- TermCursorNC   { }, -- Cursor in an unfocused terminal
-		-- ErrorMsg       { }, -- Error messages on the command line
+		ErrorMsg({ fg = colors.base.red }), -- Error messages on the command line
 		-- VertSplit      { }, -- Column separating vertically split windows
 		-- Folded         { }, -- Line used for closed folds
 		-- FoldColumn     { }, -- 'foldcolumn'
@@ -130,7 +91,7 @@ local theme = lush(function(injected_functions)
 		-- CursorLineNr   { }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		-- CursorLineFold { }, -- Like FoldColumn when 'cursorline' is set for the cursor line
 		-- CursorLineSign { }, -- Like SignColumn when 'cursorline' is set for the cursor line
-		-- MatchParen     { }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		MatchParen({ bg = colors.base.selection, gui = "bold, underline" }), -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		-- ModeMsg        { }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		-- MsgArea        { }, -- Area for messages and cmdline
 		-- MsgSeparator   { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
