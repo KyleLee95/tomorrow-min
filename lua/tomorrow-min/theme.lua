@@ -123,15 +123,15 @@ local theme = lush(function(injected_functions)
 		-- TabLine        { }, -- Tab pages line, not active tab page label
 		-- TabLineFill    { }, -- Tab pages line, where there are no labels
 		-- TabLineSel     { }, -- Tab pages line, active tab page label
-		-- Title          { }, -- Titles for output from ":set all", ":autocmd" etc.
+		Title({ fg = colors.base.blue }), -- Titles for output from ":set all", ":autocmd" etc.
 		-- Visual         { }, -- Visual mode selection
 		-- VisualNOS      { }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg({ fg = colors.base.yellow }), -- Warning messages
 		-- Whitespace     { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		-- Winseparator   { }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
-		-- WildMenu       { }, -- Current match in 'wildmenu' completion
-		-- WinBar         { }, -- Window bar of current window
-		-- WinBarNC       { }, -- Window bar of not-current windows
+		WildMenu({ bg = colors.base.red }), -- Current match in 'wildmenu' completion
+		WinBar({ fg = colors.base.fg, bg = colors.base.blue }), -- Window bar of current window
+		WinBarNC({ fg = colors.base.fg, bg = colors.base.blue }), -- Window bar of not-current windows
 
 		-- Common vim syntax groups used for all kinds of code and markup.
 		-- Commented-out groups should chain up to their preferred (*) group

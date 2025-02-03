@@ -7,6 +7,7 @@ local colors = {
 		bg_blue = "#2b303b",
 	},
 	base = {
+		white = "#ffffff",
 		fg = "#c5c8c6",
 		bg = "#1d1f21",
 		selection = "#373b41",
