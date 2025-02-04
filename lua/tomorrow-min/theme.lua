@@ -245,10 +245,16 @@ local theme = lush(function(injected_functions)
 		-- sym"@include"           { }, -- Include
 		-- sym"@preproc"           { }, -- PreProc
 		-- sym"@debug"             { }, -- Debug
-		sym("@tag")({ fg = colors.base.blue }), -- Tag
-		sym("@tag.attribute")({ fg = colors.base.fg }), -- Tag
+
+		-- Javascript
+		sym("@tag.builtin.javascript")({ fg = colors.base.blue }), -- html
+		sym("@tag.javascript")({ fg = colors.base.yellow }), -- jsx
+
+		sym("@tag")({ fg = colors.base.blue }), -- html-like
+		sym("@tag.attribute")({ fg = colors.base.fg }), -- html-like
+		-- Typescript
 		sym("@tag.builtin.tsx")({ fg = colors.base.blue }), -- html
-		sym("@tag.tsx")({ fg = colors.base.yellow }), -- tsx/jsx
+		sym("@tag.tsx")({ fg = colors.base.yellow }), -- tsx
 		sym("@module")({ fg = colors.base.fg }),
 	}
 end)
