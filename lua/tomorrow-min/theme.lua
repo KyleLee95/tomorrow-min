@@ -177,7 +177,7 @@ local theme = lush(function(injected_functions)
 		DiagnosticFloatingOk({ DiagnosticOk }), -- Used to color "Ok" diagnostic messages in diagnostics float.
 		DiagnosticSignError({ DiagnosticError }), -- Used for "Error" signs in sign column.
 		DiagnosticSignWarn({ DiagnosticWarn }), -- Used for "Warn" signs in sign column.
-		DiagnosticSignInfo({ DiagnosticnInfo }), -- Used for "Info" signs in sign column.
+		DiagnosticSignInfo({ DiagnosticInfo }), -- Used for "Info" signs in sign column.
 		DiagnosticSignHint({ DiagnosticHint }), -- Used for "Hint" signs in sign column.
 		DiagnosticSignOk({ DiagnosticOk }), -- Used for "Ok" signs in sign column.
 
@@ -198,6 +198,8 @@ local theme = lush(function(injected_functions)
 		--
 		-- For more information see https://github.com/rktjmp/lush.nvim/issues/109
 
+		sym("@lsp.type.class.typescriptreact")({ fg = colors.base.fg }),
+		sym("@lsp.type.function.typescriptreact")({ fg = colors.base.fg }),
 		-- sym"@text.literal"      { }, -- Comment
 		-- sym"@text.reference"    { }, -- Identifier
 		-- sym"@text.title"        { }, -- Title
@@ -243,7 +245,10 @@ local theme = lush(function(injected_functions)
 		-- sym"@include"           { }, -- Include
 		-- sym"@preproc"           { }, -- PreProc
 		-- sym"@debug"             { }, -- Debug
-		-- sym"@tag"               { }, -- Tag
+		sym("@tag")({ fg = colors.base.blue }), -- Tag
+		sym("@tag.attribute")({ fg = colors.base.fg }), -- Tag
+		sym("@tag.builtin.tsx")({ fg = colors.base.blue }), -- html
+		sym("@tag.tsx")({ fg = colors.base.yellow }), -- tsx/jsx
 		sym("@module")({ fg = colors.base.fg }),
 	}
 end)
