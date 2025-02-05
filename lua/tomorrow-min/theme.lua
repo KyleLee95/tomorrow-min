@@ -234,7 +234,8 @@ local theme = lush(function(injected_functions)
 		-- sym"@repeat"            { }, -- Repeat
 		-- sym"@label"             { }, -- Label
 		-- sym"@operator"          { }, -- Operator
-		-- sym"@keyword"           { }, -- Keyword
+		sym("@keyword")({ fg = colors.base.purple }), -- Keyword
+
 		-- sym"@exception"         { }, -- Exception
 		-- sym"@variable"          { }, -- Identifier
 		-- sym"@type"              { }, -- Type
@@ -246,15 +247,21 @@ local theme = lush(function(injected_functions)
 		-- sym"@preproc"           { }, -- PreProc
 		-- sym"@debug"             { }, -- Debug
 
+		sym("@tag")({ fg = colors.base.blue }), -- html-like
+		sym("@tag.attribute")({ fg = colors.base.fg }), -- html-like
 		-- Javascript
 		sym("@tag.builtin.javascript")({ fg = colors.base.blue }), -- html
 		sym("@tag.javascript")({ fg = colors.base.yellow }), -- jsx
+		sym("@keyword.import.javascript")({ fg = colors.base.purple }), -- Keyword
+		sym("@keyword.return.javascript")({ fg = colors.base.purple }), -- Keyword
 
-		sym("@tag")({ fg = colors.base.blue }), -- html-like
-		sym("@tag.attribute")({ fg = colors.base.fg }), -- html-like
 		-- Typescript
+
 		sym("@tag.builtin.tsx")({ fg = colors.base.blue }), -- html
 		sym("@tag.tsx")({ fg = colors.base.yellow }), -- tsx
+
+		sym("@keyword.import.tsx")({ fg = colors.base.purple }), -- Keyword
+		sym("@keyword.return.tsx")({ fg = colors.base.purple }), -- Keyword
 		sym("@module")({ fg = colors.base.fg }),
 	}
 end)
