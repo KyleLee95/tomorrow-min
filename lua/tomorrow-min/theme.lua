@@ -53,7 +53,7 @@ local theme = lush(function(injected_functions)
 		-- MsgSeparator   { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		-- MoreMsg        { }, -- |more-prompt|
 		-- NonText        { }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Normal({ fg = colors.base.fg, bg = colors.ghostty.bg_blue }), -- Normal text
+		Normal({ fg = colors.base.fg, bg = colors.base.bg }), -- Normal text
 		NormalFloat({ fg = colors.base.fg, bg = colors.base.bg }), -- Normal text in floating windows.
 		-- FloatBorder    { }, -- Border of floating windows.
 		-- FloatTitle     { }, -- Title of floating windows.
@@ -235,10 +235,9 @@ local theme = lush(function(injected_functions)
 		-- sym"@label"             { }, -- Label
 		-- sym"@operator"          { }, -- Operator
 		sym("@keyword")({ fg = colors.base.purple }), -- Keyword
-
 		-- sym"@exception"         { }, -- Exception
 		-- sym"@variable"          { }, -- Identifier
-		-- sym"@type"              { }, -- Type
+		sym("@type")({ Type }), -- Type
 		-- sym"@type.definition"   { }, -- Typedef
 		-- sym"@storageclass"      { }, -- StorageClass
 		-- sym"@structure"         { }, -- Structure
@@ -246,9 +245,10 @@ local theme = lush(function(injected_functions)
 		-- sym"@include"           { }, -- Include
 		-- sym"@preproc"           { }, -- PreProc
 		-- sym"@debug"             { }, -- Debug
-
-		sym("@tag")({ fg = colors.base.blue }), -- html-like
+		sym("@tag")({ fg = colors.base.blue }),
 		sym("@tag.attribute")({ fg = colors.base.fg }), -- html-like
+		sym("@module")({ fg = colors.base.fg }),
+
 		-- Javascript
 		sym("@tag.builtin.javascript")({ fg = colors.base.blue }), -- html
 		sym("@tag.javascript")({ fg = colors.base.yellow }), -- jsx
@@ -257,12 +257,22 @@ local theme = lush(function(injected_functions)
 
 		-- Typescript
 
-		sym("@tag.builtin.tsx")({ fg = colors.base.blue }), -- html
-		sym("@tag.tsx")({ fg = colors.base.yellow }), -- tsx
+		sym("@keyword.type.typescript")({ fg = colors.base.blue }),
+		sym("@keyword.typescript")({ fg = colors.base.blue }),
+		sym("@type.typescript")({ fg = colors.base.fg }),
 
+		-- tsx --
+		sym("@type.tsx")({ fg = colors.base.fg }),
+
+		-- tag
+		sym("@tag.tsx")({ fg = colors.base.yellow }), -- tsx
+		sym("@tag.builtin.tsx")({ fg = colors.base.blue }), -- html
+
+		-- keyword
+		sym("@keyword.tsx")({ fg = colors.base.blue }),
 		sym("@keyword.import.tsx")({ fg = colors.base.purple }), -- Keyword
 		sym("@keyword.return.tsx")({ fg = colors.base.purple }), -- Keyword
-		sym("@module")({ fg = colors.base.fg }),
+		sym("@keyword.function.tsx")({ fg = colors.base.blue }), -- Keyword
 	}
 end)
 
